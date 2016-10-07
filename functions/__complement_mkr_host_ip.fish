@@ -1,5 +1,10 @@
 function __complement_mkr_host_ip
-  mkr_hosts_tsv | fzf --nth=2,3 --delimiter='\t' | read -l selected_line
+  set -l selected_line
+  if string match -q -- "$ANGLER" 'fzf'
+    mkr_hosts_tsv | fzf --nth=2,3 --delimiter='\t' | read selected_line
+  else
+    mkr_hosts_tsv | angler | read selected_line
+  end
 
   if test -n "$selected_line"
     set -l ip   (echo $selected_line | cut -f 1)
