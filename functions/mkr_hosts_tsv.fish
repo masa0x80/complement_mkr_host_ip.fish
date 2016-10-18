@@ -17,7 +17,7 @@ function mkr_hosts_tsv
   mkdir -p (dirname $cache_file)
 
   if string match -q true -- $MKR_HOSTS_TSV_GIP
-    curl -s -H "X-Api-Key: $MACKEREL_APIKEY" "$mackerel_hosts_api_uri" | jq -r -c '.hosts[] | if (.meta.cloud.metadata."public-ipv4") then [.meta.cloud.metadata."public-ipv4", .name, [.roles | keys], .roles[]] | flatten else empty end | @tsv' | tee $cache_file
+    curl -s -H "X-Api-Key: $MACKEREL_APIKEY" "$mackerel_hosts_api_uri" | jq -r -c '.hosts[] | if (.meta.cloud.metadata."public-ipv4") then [.meta.cloud.metadata."public-ipv4", .name, ([(.roles | to_entries[] | [[.key], .value] | combinations | join(":"))] | join(" "))] | flatten else empty end | @tsv' | tee $cache_file
   else
     if not type -qa mkr
       set_color $fish_color_error; echo 'mkr: command not found'
