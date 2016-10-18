@@ -21,6 +21,7 @@ fisher masa0x80/complement_mkr_host_ip.fish
 ## Dependencies
 
 - [mkr]
+- [jq]
 - [fzf], [peco] or [percol]
 
 ## Usage
@@ -42,7 +43,7 @@ If you use *mackerel organizations*, I think it is useful to specify `MACKEREL_A
 
 ### `MKR_HOSTS_TSV_GIP`
 
-It is defaulted to 'false'. If you want to complement private IP address, you should set it 'true'.
+It is defaulted to 'false'. If you want to complement global IP address, you should set it 'true'.
 
 ### `COMPLEMENT_MKR_HOST_IP_KEYBIND`
 
@@ -55,6 +56,7 @@ It is defaulted to `\co\co` (ctrl-o ctrl-o).
 
 [mackerel]: https://mackerel.io/mackerel
 [mkr]: https://github.com/mackerelio/mkr
+[jq]: https://stedolan.github.io/jq/
 [fzf]: https://github.com/junegunn/fzf
 [peco]: https://github.com/peco/peco
 [percol]: https://github.com/mooz/percol
