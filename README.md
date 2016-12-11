@@ -1,21 +1,21 @@
-# complement_mkr_host_ip.fish
+# complete_mkr_host_ip.fish
 
 [![MIT LICENSE](http://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](LICENSE)
 
 ## Overview
 
-Fish plugin for complementing IP address of host registered to [mackerel].
+Fish plugin for completing IP address of host registered to [mackerel].
 
 ## Installation
 
 With [fresco]
 ```
-fresco masa0x80/complement_mkr_host_ip.fish
+fresco masa0x80/complete_mkr_host_ip.fish
 ```
 
 With [fisherman]
 ```
-fisher masa0x80/complement_mkr_host_ip.fish
+fisher masa0x80/complete_mkr_host_ip.fish
 ```
 
 ## Dependencies
@@ -38,16 +38,16 @@ To use mkr, you should assign the API key to the environment variable.
 
 ### `MACKEREL_APIKEY_NAME`
 
-It is a suffix of cache file. The cache file of `complement_mkr_host_ip.fish` is separated by using `MACKEREL_APIKEY_NAME`.
+It is a suffix of cache file. The cache file of `complete_mkr_host_ip.fish` is separated by using `MACKEREL_APIKEY_NAME`.
 If you use *mackerel organizations*, I think it is useful to specify `MACKEREL_APIKEY_NAME`.
 
 ### `MKR_HOSTS_TSV_GIP`
 
-It is defaulted to 'false'. If you want to complement global IP address, you should set it 'true'.
+It is defaulted to 'false'. If you want to complete global IP address, you should set it 'true'.
 
-### `COMPLEMENT_MKR_HOST_IP_KEYBIND`
+### `COMPLETE_MKR_HOST_IP_KEYBIND`
 
-`COMPLEMENT_MKR_HOST_IP_KEYBIND` is the key binding to start the input completion for host's IP address.
+`COMPLETE_MKR_HOST_IP_KEYBIND` is the key binding to start the input completion for host's IP address.
 It is defaulted to `\co\co` (ctrl-o ctrl-o).
 
 ## Bibliography

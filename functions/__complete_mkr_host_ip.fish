@@ -1,4 +1,4 @@
-function __complement_mkr_host_ip
+function __complete_mkr_host_ip
   set -l selected_line
   if string match -q -- "$ANGLER" 'fzf'
     mkr_hosts_tsv | fzf --nth=2.. --delimiter='\t' | read selected_line
