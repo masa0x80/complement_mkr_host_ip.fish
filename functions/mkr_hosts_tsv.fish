@@ -6,7 +6,9 @@ function mkr_hosts_tsv
   not set -q MKR_HOSTS_TSV_GIP; and set -l MKR_HOSTS_TSV_GIP false
 
   if test -z "$MACKEREL_APIKEY"
-    cat $cache_dir/*
+    for file in $cache_dir/*
+      cat $file
+    end
     return 0
   end
 
