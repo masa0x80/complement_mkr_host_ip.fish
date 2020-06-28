@@ -1,9 +1,7 @@
 function __complete_mkr_host_ip
-    if string match -q -- "$ANGLER" 'fzf'
-        mkr_hosts_tsv | fzf --nth=2.. --delimiter='\t' | tr ';' ' ' | tr '\n' ';' | read selected_lines
-    else
-        mkr_hosts_tsv | angler | tr ';' ' ' | tr '\n' ';' | read selected_lines
-    end
+    type fzf >/dev/null || return 1
+
+    mkr_hosts_tsv | fzf --nth=2.. --delimiter='\t' | tr ';' ' ' | tr '\n' ';' | read selected_lines
 
     if test -n "$selected_lines"
         for line in (string split ';' $selected_lines)

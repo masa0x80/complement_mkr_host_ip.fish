@@ -22,7 +22,7 @@ fisher masa0x80/complete_mkr_host_ip.fish
 
 - [mkr]
 - [jq]
-- [fzf], [peco] or [percol]
+- [fzf]
 
 ## Usage
 
@@ -58,7 +58,5 @@ It is defaulted to `\co\co` (ctrl-o ctrl-o).
 [mkr]: https://github.com/mackerelio/mkr
 [jq]: https://stedolan.github.io/jq/
 [fzf]: https://github.com/junegunn/fzf
-[peco]: https://github.com/peco/peco
-[percol]: https://github.com/mooz/percol
 [fresco]: https://github.com/masa0x80/fresco
 [fisherman]: https://github.com/fisherman/fisherman
